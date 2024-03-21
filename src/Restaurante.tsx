@@ -14,7 +14,7 @@ interface MenuItem {
     const dados: MenuItem[] = [
         {
             id: '1', 
-            nome: 'Carne Grelhada ao molho tuschê', 
+            nome: 'Carne Grelhada', 
             descripition: 'Carne grelhada ao molho tuschê, que é composto por banana, tomate, cebola e sazon', 
             price: 'R$168.00', 
             image: require('./assets/images/Bifeangus.png'),
@@ -29,21 +29,21 @@ interface MenuItem {
         },
         {
             id: '3', 
-            nome: 'Frango assado com folhas de eucalipito', 
+            nome: 'Frango assado', 
             descripition: 'frango assado no forno com pequenas folhas de eucalipito verde', 
             price: 'R$65.00', 
             image: require('./assets/images/images(2).png'),
         },
         {
             id: '4', 
-            nome: 'Picanha assada de ângus', 
+            nome: 'Picanha de ângus', 
             descripition: 'picanha de ângus assada na lenha com sal do topo do imalaia', 
             price: 'R$120.00', 
             image: require('./assets/images/images(3).png'),
         },
         {
             id: '5', 
-            nome: 'Bolinho de arroz japonês', 
+            nome: 'Bolinho de arroz', 
             descripition: 'arroz, sal, pimenta do reino, e folhas de hortlã', 
             price: 'R$50.00', 
             image: require('./assets/images/images(4).png'),
@@ -71,7 +71,7 @@ interface MenuItem {
         },
         {
             id: '9', 
-            nome: 'Camarão com feijão preto', 
+            nome: 'Camarão com feijão', 
             descripition: 'camarão ao feijão preto com tempero especial', 
             price: 'R$235.00', 
             image: require('./assets/images/images(8).png'),
@@ -124,19 +124,15 @@ interface MenuItem {
 
     const renderItem = ({ item }: { item: MenuItem}) => (
         <TouchableOpacity style={styles.item}>
-            
+            <View style= {styles.title}>
+                 <Text style={styles.textTitle}>{ item.nome }</Text>
+                 </View>
             <Text style= {styles.text}>{item.descripition}</Text>
             <Text style= {styles.text}>{ item.price}</Text>
             <Image source={item.image} style={styles.imagem}></Image>
    
         </TouchableOpacity>
     );
-
-   const renderBar = ({ bar }: { bar: MenuItem}) => (
-        <TouchableOpacity style={styles.item}>
-            <Text style= {styles.text}>{ bar.nome }</Text>
-        </TouchableOpacity>
-   );
 
 
  function Restaurante(): React.JSX.Element {
@@ -196,16 +192,11 @@ interface MenuItem {
     const styles = StyleSheet.create({
         container: {
             flex: 1,
-            backgroundColor: '#003840'
+            backgroundColor: '##8C4C3E'
 
         },
 
-        bar: {
-            backgroundColor: 'white',
-            padding: 20,
-
-
-        },
+        
         logoTipo: {
             marginHorizontal:1,
             width: 390,
@@ -215,27 +206,57 @@ interface MenuItem {
         text: {
             marginHorizontal: 10,
             marginVertical: 5,
-            marginTop: 10,
+            marginTop: 15,
             color: 'black',
-            fontSize: 14,
+            fontSize: 13,
+            borderTopWidth: 5,
+            borderColor: '#A67458',
+            backgroundColor: 'white',
+            marginLeft: 'auto',
+            margin: 'auto',
+            left: 1
+
+            
             
 
         },
+        textTitle: {
+            marginBottom: 8,
+            fontSize: 25,
+            fontWeight: 'bold',
+            color: '#0D0000',
+            fontStyle: 'italic',
+            
+        },
+
+        title: { 
+            
+          
+            borderWidth: 5,
+            borderColor: '#A67458',
+            backgroundColor: 'white',
+            alignItems: 'center', 
+            borderLeftColor: '#A67458',
+            borderLeftWidth: 50
+        }, 
         item: {
-            backgroundColor: '#757575',
+            backgroundColor: '#025159',
             padding: 20,
-            marginVertical: 9,
-            marginHorizontal: 30,
-            borderWidth: 3.0,
+            marginVertical: 12,
+            marginHorizontal: 25,
+            borderWidth: 5.0,
             borderColor: 'white',
+            borderLeftWidth: 50,
+            borderTopLeftRadius: 25,
+            borderBottomLeftRadius:25,
             opacity:0.9,
             
 
         },
         imagem: {
-            width: 150,
-            height: 150,
-            margin: 15,
+            width: 200,
+            height: 200,
+            margin: 5,
         
             
         },
@@ -252,11 +273,10 @@ interface MenuItem {
         },
         footer: {
             borderBottomWidth:0.2,
-            backgroundColor: '#AFAFAF',
+            backgroundColor: 'white',
             flexDirection: 'row',
             justifyContent: 'space-around',
             alignItems: 'center',
-
             paddingVertical: 15
 
         },
