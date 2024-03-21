@@ -127,6 +127,7 @@ interface MenuItem {
             <View style= {styles.title}>
                  <Text style={styles.textTitle}>{ item.nome }</Text>
                  </View>
+
             <Text style= {styles.text}>{item.descripition}</Text>
             <Text style= {styles.text}>{ item.price}</Text>
             <Image source={item.image} style={styles.imagem}></Image>
@@ -192,7 +193,7 @@ interface MenuItem {
     const styles = StyleSheet.create({
         container: {
             flex: 1,
-            backgroundColor: '##8C4C3E'
+            backgroundColor: '##C4C3E'
 
         },
 
@@ -202,16 +203,25 @@ interface MenuItem {
             width: 390,
             height: 70
         },
+        price: {
+
+
+
+        },
+        barPrice: {
+
+
+        },
 
         text: {
             marginHorizontal: 10,
             marginVertical: 5,
             marginTop: 15,
-            color: 'black',
-            fontSize: 13,
-            borderTopWidth: 5,
-            borderColor: '#A67458',
-            backgroundColor: 'white',
+            color: '#011F26',
+            fontSize: 15,
+            borderLeftWidth: 20,
+            borderColor: '#F2A71B',
+            backgroundColor: '#BFB78F',
             marginLeft: 'auto',
             margin: 'auto',
             left: 1
@@ -233,22 +243,22 @@ interface MenuItem {
             
           
             borderWidth: 5,
-            borderColor: '#A67458',
+            borderColor: '#4C5958',
             backgroundColor: 'white',
             alignItems: 'center', 
-            borderLeftColor: '#A67458',
-            borderLeftWidth: 50
+            borderLeftWidth: 25,
+            borderRightWidth: 25,
         }, 
         item: {
-            backgroundColor: '#025159',
+            backgroundColor: '#A5A692',
             padding: 20,
             marginVertical: 12,
             marginHorizontal: 25,
-            borderWidth: 5.0,
             borderColor: 'white',
-            borderLeftWidth: 50,
-            borderTopLeftRadius: 25,
-            borderBottomLeftRadius:25,
+            borderLeftWidth: 30,
+            borderRightWidth: 30,
+            borderTopRightRadius: 20,
+            borderTopLeftRadius: 20,
             opacity:0.9,
             
 
