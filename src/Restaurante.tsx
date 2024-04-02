@@ -255,10 +255,9 @@ interface MenuItem {
             marginVertical: 12,
             marginHorizontal: 25,
             borderColor: 'white',
-            borderLeftWidth: 30,
-            borderRightWidth: 30,
-            borderTopRightRadius: 20,
-            borderTopLeftRadius: 20,
+            borderLeftWidth: 40,
+            borderRightWidth: 40,
+            
             opacity:0.9,
             
 
