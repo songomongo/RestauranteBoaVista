@@ -140,10 +140,10 @@ interface MenuItem {
     return (
         <View style={ styles.container }>
             <ImageBackground source={require('./assets/images/cinza.png')}  style={styles.imagemB}>
-            <StatusBar backgroundColor="black" barStyle='light-content'/>
+            <StatusBar backgroundColor="#262626" barStyle='light-content'/>
             <View style={styles.header}>
                
-                    <Image source={require('./assets/images/restaurante.png')} style={styles.logoTipo}/>
+                    <Image source={require('./assets/images/logo2.png')} style={styles.logoTipo}/>
                 </View>
             <FlatList
             showsVerticalScrollIndicator={false}
@@ -200,8 +200,10 @@ interface MenuItem {
         
         logoTipo: {
             marginHorizontal:1,
-            width: 390,
-            height: 70
+            width: 360,
+            height: 200,
+            
+           
         },
         price: {
 
@@ -270,7 +272,7 @@ interface MenuItem {
             
         },
         header: {
-            backgroundColor: 'white',
+            backgroundColor: '#262626',
             alignItems: 'center',
                     
         },

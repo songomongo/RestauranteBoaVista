@@ -3,15 +3,15 @@ import { Image, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View }
 import { launchCamera, launchImageLibrary } from "react-native-image-picker";
 import axios from 'axios';
 
-const CadastroProduto: React.FC = () => {
+const CadastroCliente: React.FC = () => {
 
-    const [produtos, setProdutos] = useState<Produto[]>([]);
+    const [Clientes, setClientes] = useState<Cliente[]>([]);
     const [nome, setNome] = useState<string>('');
     const [preco, setPreco] = useState<string>("");
     const [ingredientes, setIngredientes] = useState<string>('');
     const [imagem, setImagem] = useState<any>('');
     
-    const CadastroProduto = async () => {   
+    const CadastroCliente = async () => {   
         try{
         const formData = new FormData();
         formData.append('nome', nome);   
@@ -23,7 +23,7 @@ const CadastroProduto: React.FC = () => {
             name: new Date() + '.jpg'
         });   
 
-        const response = await axios.post('http://10.137.11.230:8000/api/produtos', formData, {
+        const response = await axios.post('http://10.137.11.230:8000/api/Clientes', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -90,7 +90,7 @@ const CadastroProduto: React.FC = () => {
             <View style={styles.form}>
                 <TextInput 
                 style={styles.input}
-                placeholder="Nome do produto"
+                placeholder="Nome do Cliente"
                 value={nome}
                 onChangeText={setNome} />
 
@@ -117,8 +117,8 @@ const CadastroProduto: React.FC = () => {
                 <Text style={styles.imagemButtonText}>Tirar foto</Text>
 
              </TouchableOpacity>
-             <TouchableOpacity style={styles.button} onPress={CadastroProduto}>
-                <Text style={styles.buttonText}>Cadastrar Produto</Text>
+             <TouchableOpacity style={styles.button} onPress={CadastroCliente}>
+                <Text style={styles.buttonText}>Cadastrar Cliente</Text>
              </TouchableOpacity>
             </View>
 
@@ -205,4 +205,4 @@ const CadastroProduto: React.FC = () => {
      })
 
 
-export default CadastroProduto;
+export default CadastroCliente;
