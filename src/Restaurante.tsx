@@ -216,14 +216,13 @@ interface MenuItem {
         },
 
         text: {
-            marginHorizontal: 10,
+            marginHorizontal: 5,
             marginVertical: 5,
-            marginTop: 15,
-            color: '#011F26',
+            marginTop: 40,
+            color: 'white',
             fontSize: 15,
-            borderLeftWidth: 20,
-            borderColor: '#F2A71B',
-            backgroundColor: '#BFB78F',
+            
+        
             marginLeft: 'auto',
             margin: 'auto',
             left: 1
@@ -244,7 +243,7 @@ interface MenuItem {
         title: { 
             
           
-            borderWidth: 5,
+          
             borderColor: '#4C5958',
             backgroundColor: 'white',
             alignItems: 'center', 
@@ -252,14 +251,14 @@ interface MenuItem {
             borderRightWidth: 25,
         }, 
         item: {
-            backgroundColor: '#A5A692',
+            backgroundColor: '#0D0D0D',
             padding: 20,
             marginVertical: 12,
             marginHorizontal: 25,
             borderColor: 'white',
-            borderLeftWidth: 40,
-            borderRightWidth: 40,
-            
+            borderLeftWidth: 10,
+            borderRightWidth: 10,
+            borderRadius: 30,
             opacity:0.9,
             
 

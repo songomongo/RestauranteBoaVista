@@ -15,7 +15,7 @@ const CadastroCliente: React.FC = () => {
     const [password, setPassword] = useState<string>('');
     const [imagem, setImagem] = useState<any>('');
     
-    const CadastroCliente = async () => {   
+    const cadastrarCliente = async () => {   
         try{
         const formData = new FormData();
         formData.append('nome', nome);   
@@ -31,7 +31,7 @@ const CadastroCliente: React.FC = () => {
             name: new Date() + '.jpg'
         });   
 
-        const response = await axios.post('http://10.137.11.230:8000/api/Clientes', formData, {
+        const response = await axios.post('http://10.137.11.230:8000/api/cliente', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -109,11 +109,6 @@ const CadastroCliente: React.FC = () => {
                 value={email}
                 onChangeText={setEmail} />
 
-                <TextInput 
-                style={styles.input}
-                placeholder="numero"
-                value={numero}
-                onChangeText={setNumero} />
 
                 <TextInput 
                 style={styles.input}
@@ -152,7 +147,7 @@ const CadastroCliente: React.FC = () => {
                 <Text style={styles.imagemButtonText}>Tirar foto</Text>
 
              </TouchableOpacity>
-             <TouchableOpacity style={styles.button} onPress={CadastroCliente}>
+             <TouchableOpacity style={styles.button} onPress={cadastrarCliente}>
                 <Text style={styles.buttonText}>Cadastrar Cliente</Text>
              </TouchableOpacity>
             </View>
