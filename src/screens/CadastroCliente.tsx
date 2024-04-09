@@ -7,16 +7,24 @@ const CadastroCliente: React.FC = () => {
 
     const [Clientes, setClientes] = useState<Cliente[]>([]);
     const [nome, setNome] = useState<string>('');
-    const [preco, setPreco] = useState<string>("");
-    const [ingredientes, setIngredientes] = useState<string>('');
+    const [email, setEmail] = useState<string>("");
+    const [numero, setNumero] = useState<string>('');
+    const [endereco, setEndereco] = useState<string>('');
+    const [cpf, setCpf] = useState<string>('');
+    const [telefone, setTelefone] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
     const [imagem, setImagem] = useState<any>('');
     
     const CadastroCliente = async () => {   
         try{
         const formData = new FormData();
         formData.append('nome', nome);   
-        formData.append('preco', preco);   
-        formData.append('ingredientes', ingredientes);   
+        formData.append('email', email);   
+        formData.append('numero', numero);   
+        formData.append('endereco', endereco);   
+        formData.append('telefone', telefone);   
+        formData.append('cpf', email);   
+        formData.append('password', password);   
         formData.append('imagem', {
             uri: imagem,
             type: 'image/jpeg',
@@ -66,7 +74,7 @@ const CadastroCliente: React.FC = () => {
         };
 
         launchImageLibrary(options, (response)=>{
-            if(Response.didCancel){
+            if(response.didCancel){
                 console.log('cancelado pelo usuario');
             }else if (response.error) {
                 console.log('erro ao abrir a galeria')
@@ -88,6 +96,7 @@ const CadastroCliente: React.FC = () => {
                 <Text style={styles.headerText}>Restaurante Boa Vista</Text>
             </View>
             <View style={styles.form}>
+
                 <TextInput 
                 style={styles.input}
                 placeholder="Nome do Cliente"
@@ -96,16 +105,42 @@ const CadastroCliente: React.FC = () => {
 
                 <TextInput 
                 style={styles.input}
-                placeholder="Preço"
-                value={preco}
-                onChangeText={setPreco} />
+                placeholder="email"
+                value={email}
+                onChangeText={setEmail} />
 
-<TextInput 
+                <TextInput 
                 style={styles.input}
-                placeholder="ingredientes"
-                value={ingredientes}
-                onChangeText={setIngredientes}
+                placeholder="numero"
+                value={numero}
+                onChangeText={setNumero} />
+
+                <TextInput 
+                style={styles.input}
+                placeholder="telefone"
+                value={telefone}
+                onChangeText={setTelefone} />
+
+                <TextInput 
+                style={styles.input}
+                placeholder="endereco"
+                value={endereco}
+                onChangeText={setEndereco} />
+
+                <TextInput 
+                style={styles.input}
+                placeholder="cpf"
+                value={cpf}
+                onChangeText={setCpf}
                 multiline />
+
+                <TextInput 
+                style={styles.input}
+                placeholder="password"
+                value={password}
+                onChangeText={setPassword}
+                multiline />
+
             <View style={styles.alinhamentoImagemSelecionada}>
                 {imagem ? <Image source={{uri:imagem}} style={styles.imagemSelecionada}/> :null}
 

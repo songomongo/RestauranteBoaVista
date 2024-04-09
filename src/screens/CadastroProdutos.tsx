@@ -8,7 +8,7 @@ const CadastroProduto: React.FC = () => {
     const [produtos, setProdutos] = useState<Produto[]>([]);
     const [nome, setNome] = useState<string>('');
     const [preco, setPreco] = useState<string>("");
-    const [ingredientes, setIngredientes] = useState<string>('');
+    const [descricao, setDescricao] = useState<string>('');
     const [imagem, setImagem] = useState<any>('');
     
     const CadastroProduto = async () => {   
@@ -16,7 +16,7 @@ const CadastroProduto: React.FC = () => {
         const formData = new FormData();
         formData.append('nome', nome);   
         formData.append('preco', preco);   
-        formData.append('ingredientes', ingredientes);   
+        formData.append('descricao', descricao);   
         formData.append('imagem', {
             uri: imagem,
             type: 'image/jpeg',
@@ -66,7 +66,7 @@ const CadastroProduto: React.FC = () => {
         };
 
         launchImageLibrary(options, (response)=>{
-            if(Response.didCancel){
+            if(response.didCancel){
                 console.log('cancelado pelo usuario');
             }else if (response.error) {
                 console.log('erro ao abrir a galeria')
@@ -102,9 +102,9 @@ const CadastroProduto: React.FC = () => {
 
 <TextInput 
                 style={styles.input}
-                placeholder="ingredientes"
-                value={ingredientes}
-                onChangeText={setIngredientes}
+                placeholder="descricao"
+                value={descricao}
+                onChangeText={setDescricao}
                 multiline />
             <View style={styles.alinhamentoImagemSelecionada}>
                 {imagem ? <Image source={{uri:imagem}} style={styles.imagemSelecionada}/> :null}
