@@ -10,9 +10,9 @@ function App(): React.JSX.Element {
 
   return (
 
-// <Restaurante />
-  // <CadastroProduto />
-     <CadastroCliente />
+  //   <Restaurante />
+   <CadastroProduto />
+  //   <CadastroCliente />
 
   );
 }

@@ -77,9 +77,7 @@ const CadastroProduto: React.FC = () => {
         });
     }
 
-  
     
-
 
     return (
         <View style={styles.container}>
@@ -133,20 +131,7 @@ const CadastroProduto: React.FC = () => {
                 flex: 1
             },
 
-            header: {
-                backgroundColor: 'red',
-                paddingVertical: 30,
-                alignItems: 'center'
-
-            },
-
-            headerText: {
-                fontSize: 20,
-                fontWeight: 'bold',
-                marginBottom: 10,
-                
-
-            },
+            
 
             form: {
                 padding: 10,
@@ -199,6 +184,119 @@ const CadastroProduto: React.FC = () => {
             buttonText: {
                 color: 'white',
                 fontWeight: 'bold'
+            },
+        
+        
+            logoTipo: {
+                marginHorizontal: 1,
+                width: 360,
+                height: 200,
+        
+        
+            },
+        
+            
+        
+            preco: {
+               color: 'white',
+               borderBottomWidth: 2,
+               borderColor: 'white',
+               top: 20
+        
+            },
+        
+            
+                bordaImage: {
+                   
+                        borderColor: 'white',
+                        marginTop: 50,
+                        borderWidth: 2,
+                        height: 215,
+                        width: 215,
+                 
+                 
+                },
+        
+        
+        
+            text: {
+            
+                marginTop: 40,
+                marginVertical: 40,
+                color: 'white',
+                fontSize: 15,
+                alignItems: 'center',
+                borderColor: 'white',
+        
+        
+        
+        
+            },
+            textTitle: {
+                marginBottom: 8,
+                marginTop: 25,
+                fontSize: 25,
+                textDecorationLine: 'line-through',
+                
+                fontWeight: 'bold',
+                color: 'white',
+                fontStyle: 'italic',
+                
+        
+            },
+        
+            title: {
+                alignItems: 'center',
+                translateX: 10,
+            },
+            item: {
+                backgroundColor: '#0D0D0D',
+                padding: 20,
+                marginVertical: 12,
+                marginHorizontal: 25,
+                borderColor: 'white',
+                borderWidth: 2,
+                borderRadius: 30,
+                opacity: 0.9,
+              
+        
+        
+            },
+            imagem: {
+                width: 200,
+                height: 200,
+                margin: 5,
+                
+        
+            },
+            header: {
+                backgroundColor: '#262626',
+                alignItems: 'center',
+        
+            },
+            headerText: {
+                fontSize: 30,
+                fontWeight: 'bold',
+                color: 'white'
+        
+            },
+            footer: {
+                borderBottomWidth: 0.2,
+                backgroundColor: 'white',
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                alignItems: 'center',
+                paddingVertical: 15
+        
+            },
+            footerIcon: {
+                width: 35,
+                height: 35
+        
+            },
+            imagemB: {
+                flex: 1,
+                justifyContent: 'center'
             }
 
 
