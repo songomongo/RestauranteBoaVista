@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Image, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { launchCamera, launchImageLibrary } from "react-native-image-picker";
 import axios from 'axios';
+import { useNavigation } from "@react-navigation/native";
 
 const CadastroProduto: React.FC = () => {
 
@@ -77,13 +78,24 @@ const CadastroProduto: React.FC = () => {
         });
     }
 
-    
 
+//---------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+    
+const navigation = useNavigation();
     return (
         <View style={styles.container}>
-            <StatusBar  backgroundColor="red" barStyle="light-content"/>
+            <StatusBar  backgroundColor="#262626" barStyle="light-content"/>
             <View style={styles.header}>
-                <Text style={styles.headerText}>Restaurante Boa Vista</Text>
+
+            <Image source={require('../assets/images/logo2.png')} style={styles.logoTipo} />
+        
+
+            
+                    <View style ={styles.title}></View >
+                    <Text style></Text>
+
+
             </View>
             <View style={styles.form}>
                 <TextInput 
@@ -120,6 +132,33 @@ const CadastroProduto: React.FC = () => {
              </TouchableOpacity>
             </View>
 
+
+            <View style={styles.footer}>
+                <TouchableOpacity onPress={() => navigation.navigate('Restaurante')}>
+                    <Image
+                        source={require('../assets/images/agenda.png')}
+                        style={styles.footerIcon}
+                    />
+                </TouchableOpacity >
+
+                <TouchableOpacity onPress={() => navigation.navigate('CadastroCliente')}>
+                    <Image
+                        source={require('../assets/images/home.png')}
+                        style={styles.footerIcon} />
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => navigation.navigate('CadastroProduto')}>
+                    <Image
+                        source={require('../assets/images/user.png')}
+                        style={styles.footerIcon} />
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => navigation.navigate('Listagem')}>
+                    <Image
+                        source={require('../assets/images/menu.png')}
+                        style={styles.footerIcon} />
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
@@ -128,29 +167,47 @@ const CadastroProduto: React.FC = () => {
 
      const styles = StyleSheet.create({
             container: {
-                flex: 1
+                flex: 1,
+                backgroundColor: '#0D0D0D'
+            },
+
+            logoTipo: {
+                marginHorizontal: 1,
+                width: 360,
+                height: 200,
+        
+        
             },
 
             
 
             form: {
-                padding: 10,
-                backgroundColor: '#f0f0f0',
-                marginBottom: 10
+                marginTop: 20,
+                padding: 25,
+                backgroundColor: '#262626',
+                marginRight: 30,
+                marginLeft: 30,
+                borderWidth:3,
+             
+               
+                marginBottom: 1,
 
             },
 
             input: {
                 height: 40,
+                marginTop: 1,
                 borderColor: 'grey',
                 borderWidth: 1, 
-                marginBottom: 10,
+                marginBottom: 20,
                 paddingHorizontal: 10,
-                borderRadius: 10
+                borderRadius: 10,
+                backgroundColor: '#f0f0f0',
 
             },
             imageButton: {
-                backgroundColor: 'red',
+                marginTop: 20,
+                backgroundColor: '#34baab',
                 padding: 10,
                 borderRadius: 5,
                 alignItems: 'center',
@@ -175,7 +232,7 @@ const CadastroProduto: React.FC = () => {
 
             },
             button: {
-                backgroundColor: 'red',
+                backgroundColor: '#34baab',
                 padding: 10,
                 borderRadius: 5,
                 alignItems: 'center'                
@@ -185,99 +242,19 @@ const CadastroProduto: React.FC = () => {
                 color: 'white',
                 fontWeight: 'bold'
             },
-        
-        
-            logoTipo: {
-                marginHorizontal: 1,
-                width: 360,
-                height: 200,
-        
-        
-            },
-        
-            
-        
-            preco: {
-               color: 'white',
-               borderBottomWidth: 2,
-               borderColor: 'white',
-               top: 20
-        
-            },
-        
-            
-                bordaImage: {
-                   
-                        borderColor: 'white',
-                        marginTop: 50,
-                        borderWidth: 2,
-                        height: 215,
-                        width: 215,
-                 
-                 
-                },
-        
-        
-        
-            text: {
-            
-                marginTop: 40,
-                marginVertical: 40,
-                color: 'white',
-                fontSize: 15,
-                alignItems: 'center',
-                borderColor: 'white',
-        
-        
-        
-        
-            },
-            textTitle: {
-                marginBottom: 8,
-                marginTop: 25,
-                fontSize: 25,
-                textDecorationLine: 'line-through',
                 
-                fontWeight: 'bold',
-                color: 'white',
-                fontStyle: 'italic',
-                
-        
-            },
+      
         
             title: {
                 alignItems: 'center',
                 translateX: 10,
             },
-            item: {
-                backgroundColor: '#0D0D0D',
-                padding: 20,
-                marginVertical: 12,
-                marginHorizontal: 25,
-                borderColor: 'white',
-                borderWidth: 2,
-                borderRadius: 30,
-                opacity: 0.9,
-              
+         
         
-        
-            },
-            imagem: {
-                width: 200,
-                height: 200,
-                margin: 5,
-                
-        
-            },
+            
             header: {
                 backgroundColor: '#262626',
                 alignItems: 'center',
-        
-            },
-            headerText: {
-                fontSize: 30,
-                fontWeight: 'bold',
-                color: 'white'
         
             },
             footer: {
@@ -287,7 +264,7 @@ const CadastroProduto: React.FC = () => {
                 justifyContent: 'space-around',
                 alignItems: 'center',
                 paddingVertical: 15
-        
+            
             },
             footerIcon: {
                 width: 35,

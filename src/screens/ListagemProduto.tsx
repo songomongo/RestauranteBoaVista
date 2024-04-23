@@ -4,7 +4,7 @@ import { launchCamera, launchImageLibrary } from "react-native-image-picker";
 import axios from 'axios';
 import { useNavigation } from "@react-navigation/native";
 
-const CadastroCliente: React.FC = () => {
+const ListagemProduto: React.FC = () => {
 
     const [Clientes, setClientes] = useState<Cliente[]>([]);
     const [nome, setNome] = useState<string>('');
@@ -194,6 +194,7 @@ const CadastroCliente: React.FC = () => {
             container: {
                 flex: 1
             },
+            
 
             header: {
                 backgroundColor: 'red',
@@ -201,7 +202,20 @@ const CadastroCliente: React.FC = () => {
                 alignItems: 'center'
 
             },
-
+            footer: {
+                borderBottomWidth: 0.2,
+                backgroundColor: 'white',
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                alignItems: 'center',
+                paddingVertical: 15
+            
+            },
+            footerIcon: {
+                width: 35,
+                height: 35
+        
+            },
             headerText: {
                 fontSize: 20,
                 fontWeight: 'bold',
@@ -225,20 +239,6 @@ const CadastroCliente: React.FC = () => {
                 paddingHorizontal: 10,
                 borderRadius: 10
 
-            },
-            footer: {
-                borderBottomWidth: 0.2,
-                backgroundColor: 'white',
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                alignItems: 'center',
-                paddingVertical: 15
-            
-            },
-            footerIcon: {
-                width: 35,
-                height: 35
-        
             },
             imageButton: {
                 backgroundColor: 'red',
@@ -281,4 +281,4 @@ const CadastroCliente: React.FC = () => {
      })
 
 
-export default CadastroCliente;
+export default ListagemProduto;
